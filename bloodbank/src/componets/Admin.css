@@ -1,0 +1,68 @@
+/* Container for the grid system */
+.card-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling for each card */
+  .card_a {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .card_a:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling for the links */
+  .card_a a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+  }
+  
+  .card_a a:hover {
+    color: #007bff;
+  }
+  
+  /* Styling for the images */
+  .card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Text inside each card */
+  .card_a p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .card_a {
+      margin-bottom: 20px;
+      height: 300px;
+    }
+  
+    .card-image {
+      height: 200px;
+    }
+  }
+  

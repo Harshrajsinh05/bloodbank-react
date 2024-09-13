@@ -5,9 +5,15 @@ import { Link } from "react-router-dom";
 import { Home } from "./Home";
 import { Contact_us } from "./Contact_us";
 import "./Main.css"; // Custom CSS file for additional styling
-import Signup from "../Signup";
 import { Details } from "./Details";
-
+import { Card } from "./Card";
+import SignupUser from "./SignupUser";
+import SignupAdmin from "./SignupAdmin";
+import LoginUser from "./LoginUser";
+import LoginAdmin from "./LoginAdmin";
+import { Admin } from "./Admin";
+import { AdminUpdate } from "./AdminUpdate";
+import { AdminData } from "./AdminData";
 function Main() {
   return (
     <div className="container mt-4">
@@ -52,8 +58,15 @@ function Main() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact_us />} />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route path="/Signup" element={<Card />} />
+          <Route path="/details/:name" element={<Details />} />
+          <Route path="/Signup/admin" element={<SignupAdmin />} />
+          <Route path="/Signup/user" element={<SignupUser />} />
+          <Route path="/login/user" element={<LoginUser />} />
+          <Route path="/login/admin" element={<LoginAdmin />} />
+          <Route path="/admin/:username" element={<Admin />} />
+          <Route path="/admin/update" element={<AdminUpdate />} />
+          <Route path="/admin/data" element={<AdminData />} />
         </Routes>
       </Router>
     </div>

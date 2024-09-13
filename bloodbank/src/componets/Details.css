@@ -1,0 +1,44 @@
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    color: #007bff;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+  
+  .rounded {
+    border-radius: 8px;
+  }
+  
+
+.table {
+    margin-top: 20px;
+  }
+  
+  .table td, .table th {
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .table td {
+    background-color: #f8f9fa;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }

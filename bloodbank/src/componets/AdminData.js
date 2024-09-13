@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import "./Details.css"; // Custom CSS file
+import "./AdminData.css";
 
-export const Details = () => {
+export const AdminData = () => {
   const [data, setData] = useState(null);
-  const { name } = useParams();
-  console.log("Name parameter:", name);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/details/${name}`
-        );
+        const organizationname = sessionStorage.getItem("organizationname");
+        const response = await axios.get("http://localhost:5000/admin/data", {
+          params: { organizationname },
+        });
         console.log("API Response:", response.data);
         setData(response.data);
       } catch (error) {
@@ -21,14 +20,10 @@ export const Details = () => {
       }
     }
     fetchData();
-  }, [name]);
+  }, []);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
-  const bloodgroup = data.bloodgroup;
-
+  if (!data) return <p>Loading...</p>;
+  const bloodgroup = data?.bloodgroup || {};
   return (
     <div className="container mt-5">
       <div className="row">
